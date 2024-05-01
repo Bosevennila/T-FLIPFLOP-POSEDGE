@@ -8,9 +8,9 @@ To implement  T flipflop using verilog and validating their functionality using 
 
 Quartus prime
 
-**THEORY**
+**THEORY:**
 
-**T Flip-Flop**
+**T Flip-Flop:**
 
 T flip-flop is the simplified version of JK flip-flop. It is obtained by connecting the same input ‘T’ to both inputs of JK flip-flop. It operates with only positive clock transitions or negative clock transitions. The circuit diagram of T flip-flop is shown in the following figure.
 
@@ -26,17 +26,61 @@ Here, Qtt & Qt+1t+1 are present state & next state respectively. So, T flip-flop
  
 From the above characteristic table, we can directly write the next state equation as Q(t+1)=T′Q(t)+TQ(t)′ ⇒Q(t+1)=T⊕Q(t)
 
-**Procedure**
+**Procedure:**
 
-/* write all the steps invloved */
+Step-1: Start the program.
 
-**PROGRAM**
+Step 2: Write code to implement SR flipflop using verilog and validating their functionality using their functional tables.
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Step 3: Run compilation to check for errors.
 
-**RTL LOGIC FOR FLIPFLOPS**
+Step 4: Open waveform output and load input values.
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
+Step 5: Run simulation to get the output.
 
-**RESULTS**
+Step 6: Open in RTL viewers to get RTL diagram output
+
+**PROGRAM:**
+
+Program for flipflops and verify its truth table in quartus using Verilog programming. 
+
+Developed by: CHANDRAPRIYADHARSHINI C
+
+RegisterNumber: 212223240019
+
+```
+module T_FLIPFLOP( input clk, rst_n, input t,
+output reg q,
+output q_bar
+);
+always@(posedge clk) 
+begin 
+if(!rst_n)
+ q<=0;
+ else
+ if(t)
+ q<=~q;
+ else
+ q<=q;
+ end
+ 
+assign q_bar = ~q;
+endmodule
+```
+
+
+**RTL LOGIC FOR FLIPFLOPS:**
+
+
+![de6](https://github.com/23002776/T-FLIPFLOP-POSEDGE/assets/145742657/e46e1a65-ea21-4034-a41f-11b20a7fc1d3)
+
+
+**TIMING DIGRAMS FOR FLIP FLOPS:**
+
+
+![de7](https://github.com/23002776/T-FLIPFLOP-POSEDGE/assets/145742657/793e802c-8be8-410d-89fc-15447ab4acd1)
+
+
+**RESULTS:**
+
+Thus the code successfully execeuted.
